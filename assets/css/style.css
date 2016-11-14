@@ -1,0 +1,74 @@
+body {
+	background-image: url("../images/starwarsbackground.jpg");
+	background-size: cover;
+	
+}
+
+.header {
+	float: right;
+	
+	
+
+}
+
+.characters {
+	width: 100%;
+	min-height: 230px;
+	
+	
+}
+
+
+.list img {
+	width: 220px;
+	height: 200px;
+	
+
+}
+
+#luke {
+	
+	float: left;	
+	width: 240px;
+	height: 230px;
+}
+
+#obi {
+	
+	float: left;
+	width: 240px;
+	height: 230px;
+}
+
+
+#dmaul {
+	
+	float: left;
+	width: 240px;
+	height: 230px;
+}
+
+
+#dsid {
+	
+	float: left;
+	width: 240px;
+	height: 230px;
+}
+
+.clearfix {
+	overflow: auto;
+}
+
+.enemies {
+	float: left;
+
+}
+
+.fightSection {
+	float: left;
+}
+
+.defender {
+	float: left;
+}
