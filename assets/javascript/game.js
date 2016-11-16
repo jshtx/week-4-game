@@ -2,21 +2,25 @@ $(document).ready(function() {
     //declaration of the char object that holds all characters and attributes
     var char = {
         luke: {
+            name: "Luke Skywalker",
             healthPoints: 100,
             attack: 8,
             counterAttack: 2
         },
         obi: {
+            name: "Obi Wan",
             healthPoints: 120,
             attack: 6,
             counterAttack: 5
         },
         dmaul: {
+            name: "Darth Maul",
             healthPoints: 140,
             attack: 4,
             counterAttack: 3
         },
         dsid: {
+            name: "Darth Sidious",
             healthPoints: 160,
             attack: 2,
             counterAttack: 7
@@ -46,12 +50,16 @@ $(document).ready(function() {
             $('section').not(this).addClass('defense');
             //function for when enemy is chosen
             $(".defense").on("click", function() {
+                //removes defense class as it is no longer needed
                 $(this).removeClass('defense');
+
+                //adds fighter class to change background color to grey
+                $(this).addClass("fighter");
                 
                 //appends the enemy to the fight div
                 if (enemyChosen < 3) {
                     $("#defender").append(this);
-                    //removes chosen class after chosen
+                    //adds healthEnemy class after chosen
                     $(this).addClass("healthEnemy");
                     //assigns enemyCharacter to the div id so as to match with the object
                     enemyCharacter = $(this).attr('id');
@@ -63,20 +71,32 @@ $(document).ready(function() {
                         console.log(char[enemyCharacter]);
                         //subtracts the players character health points by the enemy counterattack        
                         char[playerCharacter].healthPoints = char[playerCharacter].healthPoints - char[enemyCharacter].counterAttack;
+                        
                         //subtracts the enemy health by the player's character's attack
                         char[enemyCharacter].healthPoints = char[enemyCharacter].healthPoints - char[playerCharacter].attack;
+                        
                         //adds the original attack power to the current attack power of the player's character
                         char[playerCharacter].attack = char[playerCharacter].attack + increaseAttackBy;
+                        
                         //changes the players health points on screen
                         $(".healthPlayer .health").html(char[playerCharacter].healthPoints);
+                        
                         //changes the enemys health points on screen
                         $(".healthEnemy .health").html(char[enemyCharacter].healthPoints);
                         
+                        //displays results of the fight
+                        $("#defender").html("You attacked " + char[enemyCharacter].name + " for " + char[playerCharacter].attack + " damage. " );
+                                            + char[enemyCharacter].name + " attacked you back for " + char[enemyCharacter].counterAttack + " damage.");
+
                         //hides the old enemy allowing new enemy to be chosen
                         if (char[enemyCharacter].healthPoints <= 0) {
-                            $(".healthEnemy").hide();
-                            $(this).removeClass(".healthEnemy");
 
+                            $("#defender").html("You have defeated " + char[enemyCharacter].name + " Pick someone else.");
+
+                            $(".healthEnemy").hide();
+                            //removes classes no longer needed
+                            $(this).removeClass(".healthEnemy");
+                            $(this).removeClass(".fighter");
                             //adds to the enemy dead
                             enemyDead++;
                             console.log(enemyDead);

@@ -53,8 +53,13 @@ body {
 
 #defender {
 	float: left;
+	
 }
 
 .defense {
 	background-color: red;
+}
+
+.fighter {
+	background-color: grey;
 }
