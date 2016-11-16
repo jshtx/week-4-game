@@ -20,41 +20,23 @@ body {
 
 
 .list img {
-	width: 220px;
-	height: 200px;
+	width: 120px;
+	height: 100px;
+	margin: 0 auto;
 	
 
 }
 
-#luke {
-	
+.list {
 	float: left;	
-	width: 240px;
-	height: 230px;
-}
-
-#obi {
+	width: 140px;
+	height: 150px;
+	background-color: white;
+	border: 2px solid green;
+	text-align: center;
 	
-	float: left;
-	width: 240px;
-	height: 230px;
 }
 
-
-#dmaul {
-	
-	float: left;
-	width: 240px;
-	height: 230px;
-}
-
-
-#dsid {
-	
-	float: left;
-	width: 240px;
-	height: 230px;
-}
 
 .clearfix {
 	overflow: auto;
@@ -69,6 +51,10 @@ body {
 	float: left;
 }
 
-.defender {
+#defender {
 	float: left;
+}
+
+.defense {
+	background-color: red;
 }

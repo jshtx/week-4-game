@@ -2,72 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Star Wars RPG</title>
+  <title>Star Wars RPG</title><!--link to css reset-->
+  <link href="assets/css/reset.css" rel="stylesheet" type="text/css"><!--link to my css stylesheet-->
+  <link href="assets/css/style.css" rel="stylesheet" type="text/css"><!-- Added link to the jQuery Library -->
 
-  <!--link to css reset-->
-  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-  <!--link to my css stylesheet-->
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-  <!-- Added link to the jQuery Library -->
-  <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
-
-  <!-- Added a link to Bootstrap-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
+  <script src="https://code.jquery.com/jquery-2.2.3.js">
+  </script><!-- Added a link to Bootstrap-->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+  <div class="wrapper">
+    <div class="header col-lg-9">
+      <h1>Star Wars RPG</h1>
+    </div>
+    <!--div contains all characters-->
+    <div class="characters col-lg-12">
+      <section class="list" id="luke">
+        <p class="health">100</p><img alt="luke skywalker" src="assets/images/luke.jpg">
+        <p>Luke Skywalker</p>
+      </section>
+      <section class="list" id="obi">
+        <p class="health">120</p><img alt="obi wan" src="assets/images/obi.jpg">
+        <p>Obi Wan</p>
+      </section>
+      <section class="list" id="dmaul">
+        <p class="health">140</p><img alt="darth maul" src="assets/images/Darth_Maul.png">
+        <p>Darth Maul</p>
+      </section>
+      <section class="list" id="dsid">
+        <p class="health">160</p><img alt="darth sidious" src="assets/images/darthSidious.png">
+        <p>Darth Sidious</p>
+      </section>
+    </div>
 
-<div class="wrapper">
-  
-  <div class="header col-lg-9">
-    <h1>Star Wars RPG</h1>
+      <!--div where players character is appended to--> 
+      <div class="yourCharacter col-lg-12">
+        <h3>Your Character</h3>
+      </div>
+
+    <!--div where enemy choices are appended-->  
+    <div class="enemies col-lg-12">
+      <h3>Enemies Available to Attack</h3>
+    </div>
+
+    <!--where the attack button is-->
+    <div class="fightSection col-lg-12">
+      <h3>Fight Section</h3><button class="attack">Attack!</button>
+    </div>
+
+    <!--where the enemy fights-->
+    <div class=" col-lg-12" id="defender">
+      <h3>Defender</h3>
+    </div><!--links to javascript-->
+    <script src="assets/javascript/game.js" type="text/javascript">
+    </script>
   </div>
-
-<div class="characters col-lg-12">
-    <section class="list" id="luke">
-      <img src="assets/images/luke.jpg" alt="luke skywalker">
-    </section>
-
-    <section class="list" id="obi">
-      <img src="assets/images/obi.jpg" value="obi" alt="obi wan">
-    </section>
-
-    <section class="list" id="dmaul">
-      <img src="assets/images/Darth_Maul.png" value="dmaul" alt="darth maul">
-    </section>
-
-    <section class="list" id="dsid" >
-      <img src="assets/images/darthSidious.png" value="dsid" alt="darth sidious">
-    
-    </section>
-
-  
-  </div>
-
-
-
-  <div class="yourCharacter col-lg-12">
-    <h2>Your Character</h2>
-  </div>
-  
-  
-  <div class="enemies col-lg-12">
-    <h2>Enemies Available to Attack</h2>
-  </div>
-
-  <div class="fightSection col-lg-12">
-    <h2>Fight Section</h2>
-    <button class="attack">Attack!</button>
-  </div>
-
-  <div class="defender col-lg-12">
-    <h2>Defender</h2>
-  </div>
-  
-  <!--links to javascript-->
-  <script type="text/javascript" src="assets/javascript/game.js"></script>
-
-</div>
 </body>
 </html>
