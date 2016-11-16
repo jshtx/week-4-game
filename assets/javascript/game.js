@@ -53,6 +53,7 @@ $(document).ready(function() {
                 //removes defense class as it is no longer needed
                 $(this).removeClass('defense');
 
+                
                 //adds fighter class to change background color to grey
                 $(this).addClass("fighter");
                 
@@ -85,14 +86,15 @@ $(document).ready(function() {
                         $(".healthEnemy .health").html(char[enemyCharacter].healthPoints);
                         
                         //displays results of the fight
-                        $("#defender").html("You attacked " + char[enemyCharacter].name + " for " + char[playerCharacter].attack + " damage. " );
-                                            + char[enemyCharacter].name + " attacked you back for " + char[enemyCharacter].counterAttack + " damage.");
+                        $(".fightComm1").html("You attacked " + char[enemyCharacter].name + " for " + char[playerCharacter].attack + " damage.");
+                        $(".fightComm2").html(char[enemyCharacter].name + " attacked you back for " + char[enemyCharacter].counterAttack + " damage.");
 
                         //hides the old enemy allowing new enemy to be chosen
                         if (char[enemyCharacter].healthPoints <= 0) {
 
-                            $("#defender").html("You have defeated " + char[enemyCharacter].name + " Pick someone else.");
-
+                            $(".fightComm1").html("You have defeated " + char[enemyCharacter].name + " Pick someone else.");
+                            
+                            $(".fightComm2").empty();
                             $(".healthEnemy").hide();
                             //removes classes no longer needed
                             $(this).removeClass(".healthEnemy");
@@ -101,13 +103,13 @@ $(document).ready(function() {
                             enemyDead++;
                             console.log(enemyDead);
                             if (enemyDead === 3) {
-                               $("#defender").html("YOU WON YOU WINNER REFRESH PAGE TO PLAY AGAIN BECAUSE THE RESET BUTTON DOESN'T WORK YET"); 
+                               $(".winText").html("YOU WON YOU WINNER REFRESH PAGE TO PLAY AGAIN BECAUSE THE RESET BUTTON DOESN'T WORK YET"); 
                             }
                         }
                         
                         //ends game (kinda for the moment) when their character dies
                         if (char[playerCharacter].healthPoints <= 0) {
-                            $("#defender").html("YOU LOST YOU LOSER REFRESH PAGE TO PLAY AGAIN BECAUSE THE RESET BUTTON DOESN'T WORK YET");
+                            $(".winText").html("YOU LOST YOU LOSER REFRESH PAGE TO PLAY AGAIN BECAUSE THE RESET BUTTON DOESN'T WORK YET");
                         }
                         console.log(char[playerCharacter]);
                         console.log(char[enemyCharacter]);
