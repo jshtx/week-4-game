@@ -103,13 +103,15 @@ $(document).ready(function() {
                             enemyDead++;
                             console.log(enemyDead);
                             if (enemyDead === 3) {
-                               $(".winText").html("YOU WON YOU WINNER REFRESH PAGE TO PLAY AGAIN BECAUSE THE RESET BUTTON DOESN'T WORK YET"); 
+                                $(".fightComm1").html("YOU WON YOU WINNER REFRESH PAGE TO PLAY AGAIN BECAUSE THE RESET BUTTON DOESN'T WORK YET"); 
+                                $(".fightComm2").empty();
                             }
                         }
                         
                         //ends game (kinda for the moment) when their character dies
                         if (char[playerCharacter].healthPoints <= 0) {
-                            $(".winText").html("YOU LOST YOU LOSER REFRESH PAGE TO PLAY AGAIN BECAUSE THE RESET BUTTON DOESN'T WORK YET");
+                            $(".fightComm1").html("YOU LOST YOU LOSER REFRESH PAGE TO PLAY AGAIN BECAUSE THE RESET BUTTON DOESN'T WORK YET");
+                            $(".fightComm2").empty();
                         }
                         console.log(char[playerCharacter]);
                         console.log(char[enemyCharacter]);
